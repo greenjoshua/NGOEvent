@@ -1,0 +1,18 @@
+{
+    "events": [
+        {
+            "eventName" : "Bible Study",
+            "eventDescription" : "Studying the bible in a small group",
+            "category": "Religious",
+            "startDate" : "1/19/2022",
+            "endDate" : "1/22/2022",
+            "startTime" : "6:30pm",
+            "endTime" : "8:30pm",
+            "location" : "Edison, NJ",
+            "registration" : "true",
+            "image" : "someImage",
+            "adultPrice" : 21,
+            "childPrice" : 15
+        }
+    ]
+}
