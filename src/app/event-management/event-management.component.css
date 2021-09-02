@@ -1,13 +1,40 @@
+.pageheader{
+    background:darkblue;
+    color:white;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
 .add {
-    align-items:flex-end;
+    display:block;
+    width:100%;
+}
+
+.add h3{
+    margin-top:1rem;
+    background:darkblue;
+    color:white;
+    text-transform: capitalize;
+    width:fit-content;
+    padding:.5rem;
+    float:right;
 }
 
 table {
-    border-color: black;
     border-radius: 2rem;
-    border-style: solid;
+    color:black;
+    width:100%;
 }
 
-.title {
-    background-color: lightblue;
+tr:nth-child(even) {
+    background: lightblue;
+    color:white;
+}
+
+thead{
+    background:darkblue;
+    color:white;
+}
+thead tr th, tbody tr td{
+    padding:1rem;
 }
