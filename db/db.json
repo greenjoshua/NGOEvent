@@ -1,6 +1,7 @@
 {
     "events": [
         {
+            "id" : "1",
             "eventName" : "Bible Study",
             "eventDescription" : "Studying the bible in a small group",
             "category": "Religious",
@@ -10,9 +11,69 @@
             "endTime" : "8:30pm",
             "location" : "Edison, NJ",
             "registration" : "true",
-            "image" : "someImage",
+            "image" : "../../assets/images/biblestudy.jpg",
             "adultPrice" : 21,
             "childPrice" : 15
+        },
+        {
+            "id" : "2",
+            "eventName" : "Thought to be thoughtful",
+            "eventDescription" : "Philosophical idea sharing groups",
+            "category": "Spiritual",
+            "startDate" : "12/20/2022",
+            "endDate" : "12/24/2022",
+            "startTime" : "10:30am",
+            "endTime" : "12:30am",
+            "location" : "Princeton, NJ",
+            "registration" : "true",
+            "image" : "../../assets/images/philosophy.jpg",
+            "adultPrice" : 50,
+            "childPrice" : 30
+        },
+        {
+            "id" : "3",
+            "eventName" : "Meditation",
+            "eventDescription" : "A place to meditate in peace and serenity",
+            "category": "Spiritual",
+            "startDate" : "12/01/2022",
+            "endDate" : "12/04/2022",
+            "startTime" : "3:30pm",
+            "endTime" : "4:30pm",
+            "location" : "Piscataway, NJ",
+            "registration" : "true",
+            "image" : "../../assets/images/meditation.jpg",
+            "adultPrice" : 65,
+            "childPrice" : 47
+        },
+        {
+            "id" : "4",
+            "eventName" : "Ideal Parenting",
+            "eventDescription" : "Learn how to be a better parent",
+            "category": "Social",
+            "startDate" : "11/25/2022",
+            "endDate" : "11/28/2022",
+            "startTime" : "5:30pm",
+            "endTime" : "7:30pm",
+            "location" : "East Brunswick, NJ",
+            "registration" : "true",
+            "image" : "../../assets/images/idealparenting.jpg",
+            "adultPrice" : 35,
+            "childPrice" : 15
+        },
+        {
+            "id" : "5",
+            "eventName" : "How to be a Financial Badass",
+            "eventDescription" : "Learn how to finance your future",
+            "category": "Financial",
+            "startDate" : "10/11/2022",
+            "endDate" : "10/22/2022",
+            "startTime" : "4:30pm",
+            "endTime" : "7:30pm",
+            "location" : "Chicago, IL",
+            "registration" : "true",
+            "image" : "../../assets/images/finance.jpg",
+            "adultPrice" : 115,
+            "childPrice" : 75
         }
     ]
 }

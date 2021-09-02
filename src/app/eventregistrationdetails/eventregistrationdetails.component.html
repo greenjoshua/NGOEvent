@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="col">
+        <h3>Event Registration Details: {{event.eventName}}</h3>
+    </div>
+    <div class="col">
+        <div class="row">
+            {{event.eventName}}
+        </div>
+        <div class="row">
+            {{event.category}}
+        </div>
+        <div class="row">
+            {{event.location}}
+        </div>
+        <div class="row">
+            {{event.startDate}} {{event.startTime}}
+        </div>
+        <div class="row">
+            {{event.endDate}} {{event.endTime}}
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            {{event.eventDescription}}
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            {{event.image}}
+        </div>
+    </div>
+    <div class="col">
+        <button type="submit" (click)="onClickRegistration(event)">Registration button (only if registration is allowed)</button>
+    </div>
+</div>

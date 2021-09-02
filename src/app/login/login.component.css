@@ -1,0 +1,15 @@
+
+.container {
+    margin-top: 8rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.col {
+    width: 200px;
+}
+
+.col-sm {
+    margin-top: 1.25rem;
+}

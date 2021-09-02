@@ -1,1 +1,43 @@
-<p>userview works!</p>
+<!--<div class="container">
+    <div class="col">
+        <div class="row">
+            <h1>Event Registration</h1>
+        </div>
+        <div class="row" *ngFor="let event of events">
+            <img src="#" alt="An image" />
+        </div>
+    </div>
+
+</div>-->
+
+<div class="container" *ngFor="let event of events">
+    <div class="col">
+        
+            <mat-card (click)="onClick(event)">
+                <img mat-card-image src={{event.eventImage}} alt="an image depiction of the event" />
+                {{event.eventName}}
+            </mat-card>
+    </div>
+</div>
+
+<!--<div class="margin-top-20" fxFlexFill fxLayout="row wrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="15px grid">
+    <div fxFlex="20" fxFlex.md="33" *ngFor="let advert of adverts; let i = index" class="padding-fix">
+  
+      <div fxFlexFill fxLayoutAlign="center stretch">
+        <mat-card class="ad">
+          <div fxLayoutAlign="space-between center">
+            <img mat-card-image src="test" alt="test">
+          </div>
+          <mat-card-title>test</mat-card-title>
+          <mat-card-content>
+            <p>
+              test
+            </p>
+          </mat-card-content>
+  
+          <mat-card-actions align="end">
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>-->

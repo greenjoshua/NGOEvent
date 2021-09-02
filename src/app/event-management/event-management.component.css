@@ -1,0 +1,13 @@
+.add {
+    align-items:flex-end;
+}
+
+table {
+    border-color: black;
+    border-radius: 2rem;
+    border-style: solid;
+}
+
+.title {
+    background-color: lightblue;
+}

@@ -1,0 +1,23 @@
+mat-card {
+  width: 20%;
+}
+
+mat-card img{
+    /*object-fit: cover; this makes the image in src fit to the size specified below */
+    width: 15%;  /*Here you can use wherever you want to specify the width and also the height of the <img> */
+    height: 80%;
+    background-color: rgb(9, 187, 247);
+  }
+
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column mat-card img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,9 @@ import { UserviewComponent } from './userview/userview.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { EventregistrationdetailsComponent } from './eventregistrationdetails/eventregistrationdetails.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import {MatButtonModule} from '@angular/material/button';
     EventManagementComponent,
     LoginComponent,
     UserviewComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    EventregistrationdetailsComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatListModule,
     HttpClientModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

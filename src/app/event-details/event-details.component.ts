@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 //private modalService: NgbModal
 
@@ -9,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventDetailsComponent implements OnInit {
 
-  constructor( ) { }
+  constructor(public dialogRef: MatDialogRef<EventDetailsComponent>) { }
 
   ngOnInit(): void {
   }
 
-
+  close() {
+    this.dialogRef.close();
+  }
 
 }
