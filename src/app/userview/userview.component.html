@@ -17,7 +17,7 @@
   <div class="row">
     <div class="cards col-12 col-md-4 col-lg-3" *ngFor="let event of events">
             <mat-card  (click)="onClick(event)">
-                <img mat-card-image src={{event.image}} alt="an image depiction of the event" />
+                <img mat-card-image src={{event.eventImage}} alt="an image depiction of the event" />
             </mat-card>
             <h3>{{event.eventName}}</h3>
     </div>

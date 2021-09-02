@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class EventService {
 
-  private _url: string = "http://localhost:3001/events";
+  private _url: string = "http://localhost:8080/events";
   httpOptions: any = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
