@@ -1,35 +1,39 @@
-<div class="container">
-    <div class="col">
-        <h3>Event Registration Details: {{event.eventName}}</h3>
+<div class="container-fluid">
+    <div class="row pageheader">
+        <h1>Event Registration Details: {{event.eventName}}</h1>
     </div>
-    <div class="col">
-        <div class="row">
-            {{event.eventName}}
+    <div class="row">
+        <div class="col-4">
+            <span>
+                {{event.eventName}}
+            </span>
+            <span>
+                {{event.category}}
+            </span>
+            <span>
+                {{event.location}}
+            </span>
+            <span>
+                {{event.startDate}} {{event.startTime}}
+            </span>
+            <span>
+                {{event.endDate}} {{event.endTime}}
+            </span>
         </div>
-        <div class="row">
-            {{event.category}}
+        <div class="col-4">
+            <span id="description">
+                {{event.eventDescription}}
+            </span>
+            <span>ADULT TICKET PRICES: {{event.adultPrice}}</span>
+            <span>CHILD TICKET PRICES: {{event.childPrice}}</span>
         </div>
-        <div class="row">
-            {{event.location}}
-        </div>
-        <div class="row">
-            {{event.startDate}} {{event.startTime}}
-        </div>
-        <div class="row">
-            {{event.endDate}} {{event.endTime}}
+        <div class="col-4">
+            <mat-card>
+                <img src={{event.image}} />
+            </mat-card>
         </div>
     </div>
-    <div class="col">
-        <div class="row">
-            {{event.eventDescription}}
-        </div>
-    </div>
-    <div class="col">
-        <div class="row">
-            {{event.image}}
-        </div>
-    </div>
-    <div class="col">
+    <div class="row">
         <button type="submit" (click)="onClickRegistration(event)">Registration button (only if registration is allowed)</button>
     </div>
 </div>
