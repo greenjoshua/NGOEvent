@@ -11,12 +11,12 @@ import { catchError } from 'rxjs/operators';
 export class EventService {
 
   private _url: string = "http://localhost:8080/events";
-  httpOptions: any = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': "*"
-    })
-  };
+  // httpOptions: any = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'Access-Control-Allow-Origin': "*"
+  //   })
+  // };
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +27,21 @@ export class EventService {
 
   getEventById(id: string): Observable<Event> {
     return this.http.get<Event>(this._url + '/' + id)
+    .pipe(catchError(this.errorHandler));
+  }
+
+  updateEvent(id: string, empData: any): Observable<Event> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    console.log("Results from put in eventService");
+    console.log(empData);
+    console.log(this._url + '/' + id);
+    return this.http.put<Event>(this._url + '/' + id, empData, httpOptions)
     .pipe(catchError(this.errorHandler));
   }
 

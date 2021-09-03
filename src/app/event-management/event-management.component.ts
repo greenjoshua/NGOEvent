@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { EventService } from 'src/Services/events-service.service';
@@ -9,7 +9,7 @@ import { EventDetailsComponent } from '../event-details/event-details.component'
   templateUrl: './event-management.component.html',
   styleUrls: ['./event-management.component.css']
 })
-export class EventManagementComponent implements OnInit {
+export class EventManagementComponent implements OnInit, OnChanges {
 
   errorMsg: any;
   events: any;
@@ -26,11 +26,19 @@ export class EventManagementComponent implements OnInit {
     )
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(EventDetailsComponent);
+  ngOnChanges(): void {
+    this.eventService.getEvents().subscribe(
+      (data) => {
+        console.log(data);
+        this.events = data;
+      },
+      (error) => this.errorMsg = error
+    )
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialog(event: any) {
+    const dialogRef = this.dialog.open(EventDetailsComponent, {
+      data: { id: event.id }
     });
   }
 

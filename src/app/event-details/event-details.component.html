@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="col">
         <div class="row">
             <h4>Event Details</h4>
@@ -7,62 +7,64 @@
             </button>
         </div>
     </div>
-    <div class="row">
-        <div>
-            <label for="eventName">Event Name</label>
-            <input type="text" name="eventName" id="eventName">
+    <form #eventDetailsForm="ngForm" >
+        <div class="row">
+            <div>
+                <label for="eventName">Event Name</label>
+                <input type="text" name="eventName" id="eventName" [(ngModel)]="event.eventName">
+            </div>
+            <div>
+                <label for="eventDescription">Event Description</label>
+                <input type="text" name="eventDescription" id="eventDescription" [(ngModel)]="event.eventDescription">
+            </div>
+            <div>
+                <label for="category">Event Category</label>
+                <input type="text" name="category" id="category" [(ngModel)]="event.category">
+            </div>
+            <div>
+                <label for="startDate">Event Start Date</label>
+                <input type="text" name="startDate" id="startDate" [(ngModel)]="event.startDate">
+            </div>
+            <div>
+                <label for="endDate">Event End Date</label>
+                <input type="text" name="endDate" id="endDate" [(ngModel)]="event.endDate">
+            </div>
+            <div>
+                <label for="startTime">Event Start Time</label>
+                <input type="text" name="startTime" id="startTime" [(ngModel)]="event.startTime">
+            </div>
+            <div>
+                <label for="endTime">Event End Time</label>
+                <input type="text" name="endTime" id="endTime" [(ngModel)]="event.endTime">
+            </div>
+            <div>
+                <label for="location">Event Location</label>
+                <input type="text" name="location" id="location" [(ngModel)]="event.location">
+            </div>
+            <div>
+                <label for="registration">Allow Registration</label>
+                <input type="text" name="registration" id="registration" [(ngModel)]="event.registration">
+            </div>
+            <div>
+                <label for="eventImage">Event Image</label>
+                <input type="text" name="eventImage" id="eventImage" [(ngModel)]="event.eventImage">
+            </div>
+            <div>
+                <label for="adultPrice">Adult Ticket Price</label>
+                <input type="text" name="adultPrice" id="adultPrice" [(ngModel)]="event.adultPrice">
+            </div>
+            <div>
+                <label for="childPrice">Child Ticket Price</label>
+                <input type="text" name="childPrice" id="childPrice" [(ngModel)]="event.childPrice">
+            </div>
+            <div>
+                <button type="submit" (click)="save()">Save</button>
+            </div>
+            <div>
+                <button type="button" (click)="close()">Cancel</button>
+            </div>
         </div>
-        <div>
-            <label for="eventDescription">Event Description</label>
-            <input type="text" name="eventDescription" id="eventDescription">
-        </div>
-        <div>
-            <label for="category">Event Category</label>
-            <input type="text" name="category" id="category">
-        </div>
-        <div>
-            <label for="startDate">Event Start Date</label>
-            <input type="text" name="startDate" id="startDate">
-        </div>
-        <div>
-            <label for="endDate">Event End Date</label>
-            <input type="text" name="endDate" id="endDate">
-        </div>
-        <div>
-            <label for="startTime">Event Start Time</label>
-            <input type="text" name="startTime" id="startTime">
-        </div>
-        <div>
-            <label for="endTime">Event End Time</label>
-            <input type="text" name="endTime" id="endTime">
-        </div>
-        <div>
-            <label for="location">Event Location</label>
-            <input type="text" name="location" id="location">
-        </div>
-        <div>
-            <label for="registration">Allow Registration</label>
-            <input type="text" name="registration" id="registration">
-        </div>
-        <div>
-            <label for="eventImage">Event Image</label>
-            <input type="text" name="eventImage" id="eventImage">
-        </div>
-        <div>
-            <label for="adultPrice">Adult Ticket Price</label>
-            <input type="text" name="adultPrice" id="adultPrice">
-        </div>
-        <div>
-            <label for="childPrice">Child Ticket Price</label>
-            <input type="text" name="childPrice" id="childPrice">
-        </div>
-        <div>
-            <button type="submit">Save</button>
-        </div>
-        <div>
-            <button type="button">Cancel</button>
-        </div>
-    </div>
+    </form>
 </div>
 
 
