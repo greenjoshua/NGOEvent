@@ -36,10 +36,14 @@ export class EventManagementComponent implements OnInit, OnChanges {
     )
   }
 
-  openDialog(event: any) {
+  openEditDialog(event: any) {
     const dialogRef = this.dialog.open(EventDetailsComponent, {
       data: { id: event.id }
     });
+  }
+
+  addEvent() {
+    this.router.navigate(['addevent']);
   }
 
 }

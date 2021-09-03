@@ -45,6 +45,13 @@ export class EventService {
     .pipe(catchError(this.errorHandler));
   }
 
+  post(empData: any) {
+    console.log(empData);
+    console.log("Results from post");
+    return this.http.post<Event>(this._url, empData)
+    .pipe(catchError(this.errorHandler));
+  }
+
   errorHandler(error: HttpErrorResponse) {
     return throwError(error.message || "Server Error");
   }

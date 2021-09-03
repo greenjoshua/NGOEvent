@@ -18,6 +18,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { EventregistrationdetailsComponent } from './eventregistrationdetails/eventregistrationdetails.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
+import { RegistrationPage2Component } from './registration-page2/registration-page2.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { RegistrationComponent } from './registration/registration.component';
     UserviewComponent,
     EventDetailsComponent,
     EventregistrationdetailsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    RegistrationConfirmationComponent,
+    RegistrationPage2Component,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,

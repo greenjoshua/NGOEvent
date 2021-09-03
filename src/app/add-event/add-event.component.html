@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="col">
+        <div class="row">
+            <h4>Event Details</h4>
+            <button type="button" class="close" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <form #addEventForm="ngForm">
+        <div class="row">
+            <div>
+                <label for="eventName">Event Name</label>
+                <input type="text" name="eventName" id="eventName" [(ngModel)]="eventModel.eventName">
+            </div>
+            <div>
+                <label for="eventDescription">Event Description</label>
+                <input type="text" name="eventDescription" id="eventDescription" [(ngModel)]="eventModel.eventDescription">
+            </div>
+            <div>
+                <label for="category">Event Category</label>
+                <input type="text" name="category" id="category" [(ngModel)]="eventModel.category">
+            </div>
+            <div>
+                <label for="startDate">Event Start Date</label>
+                <input type="text" name="startDate" id="startDate" [(ngModel)]="eventModel.startDate">
+            </div>
+            <div>
+                <label for="endDate">Event End Date</label>
+                <input type="text" name="endDate" id="endDate" [(ngModel)]="eventModel.endDate">
+            </div>
+            <div>
+                <label for="startTime">Event Start Time</label>
+                <input type="text" name="startTime" id="startTime" [(ngModel)]="eventModel.startTime">
+            </div>
+            <div>
+                <label for="endTime">Event End Time</label>
+                <input type="text" name="endTime" id="endTime" [(ngModel)]="eventModel.endTime">
+            </div>
+            <div>
+                <label for="location">Event Location</label>
+                <input type="text" name="location" id="location" [(ngModel)]="eventModel.location">
+            </div>
+            <div>
+                <label for="registration">Allow Registration</label>
+                <input type="text" name="registration" id="registration" [(ngModel)]="eventModel.registration">
+            </div>
+            <div>
+                <label for="eventImage">Event Image</label>
+                <input type="text" name="eventImage" id="eventImage" [(ngModel)]="eventModel.eventImage">
+            </div>
+            <div>
+                <label for="adultPrice">Adult Ticket Price</label>
+                <input type="text" name="adultPrice" id="adultPrice" [(ngModel)]="eventModel.adultPrice">
+            </div>
+            <div>
+                <label for="childPrice">Child Ticket Price</label>
+                <input type="text" name="childPrice" id="childPrice" [(ngModel)]="eventModel.childPrice">
+            </div>
+            <div>
+                <button type="submit" (click)="save()">Save</button>
+            </div>
+            <div>
+                <button type="button" (click)="close()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -3,7 +3,7 @@
         <div class="col-12 title pageheader">
             <h1>Event Management</h1>
         </div>
-        <div class="col-12 add">
+        <div class="col-12 add" (click)="addEvent()">
             <h3>Add New Event</h3>
         </div>
         <div class="col-12">
@@ -26,7 +26,7 @@
                         <td>{{evt.startDate}}</td>
                         <td>{{evt.endDate}}</td>
                         <td>
-                            <button mat-button (click)="openDialog(evt)">edit</button>
+                            <button mat-button (click)="openEditDialog(evt)">edit</button>
                         </td>
                     </tr>
                 </tbody>
