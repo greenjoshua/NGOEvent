@@ -21,6 +21,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 import { RegistrationPage2Component } from './registration-page2/registration-page2.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { EventService } from 'src/Services/events-service.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     MatCardModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

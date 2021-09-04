@@ -1,67 +1,149 @@
 <div class="container-fluid">
     <div class="col">
         <div class="row">
-            <h4>Event Details</h4>
-            <button type="button" class="close" aria-label="Close" (click)="close()">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <h2>Add a New Event</h2>
         </div>
     </div>
-    <form #addEventForm="ngForm">
+    <form #addEventForm="ngForm" (ngSubmit)="onSubmit(addEventForm)" novalidate>
         <div class="row">
             <div>
                 <label for="eventName">Event Name</label>
-                <input type="text" name="eventName" id="eventName" [(ngModel)]="eventModel.eventName">
+                <input type="text" class="form-control" #eventName="ngModel" name="eventName" id="eventName" [(ngModel)]="eventModel.eventName"
+                    required minlength="3"
+                    [class.is-invalid]="eventName.invalid && eventName.touched"
+                >
+                <div *ngIf="eventName.touched && eventName.errors">
+                    <div class="alert alert-danger" *ngIf="eventName.errors.required">Event Name is required</div>
+                    <div class="alert alert-danger" *ngIf="eventName.errors.minlength">Event Name should be at least 3 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="eventDescription">Event Description</label>
-                <input type="text" name="eventDescription" id="eventDescription" [(ngModel)]="eventModel.eventDescription">
+                <input type="text" class="form-control" name="eventDescription" #eventDescription="ngModel" id="eventDescription" [(ngModel)]="eventModel.eventDescription"
+                    required minlength="5"
+                    [class.is-invalid]="eventDescription.invalid && eventDescription.touched"
+                >
+                <div *ngIf="eventDescription.touched && eventDescription.errors">
+                    <div class="alert alert-danger" *ngIf="eventDescription.errors.required">Event Description is required</div>
+                    <div class="alert alert-danger" *ngIf="eventDescription.errors.minlength">Event Description should be at least 5 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="category">Event Category</label>
-                <input type="text" name="category" id="category" [(ngModel)]="eventModel.category">
+                <input type="text" class="form-control" name="category" #category="ngModel" id="category" [(ngModel)]="eventModel.category"
+                    required minlength="6"
+                    [class.is-invalid]="category.invalid && category.touched"
+                >
+                <div *ngIf="category.touched && category.errors">
+                    <div class="alert alert-danger" *ngIf="category.errors.required">Category is required</div>
+                    <div class="alert alert-danger" *ngIf="category.errors.minlength">Category should be at least 6 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="startDate">Event Start Date</label>
-                <input type="text" name="startDate" id="startDate" [(ngModel)]="eventModel.startDate">
+                <input type="text" class="form-control" name="startDate" #startDate="ngModel" id="startDate" [(ngModel)]="eventModel.startDate"
+                    required minlength="10"
+                    [class.is-invalid]="startDate.invalid && startDate.touched"
+                >
+                <div *ngIf="startDate.touched && startDate.errors">
+                    <div class="alert alert-danger" *ngIf="startDate.errors.required">Start Date is required</div>
+                    <div class="alert alert-danger" *ngIf="startDate.errors.minlength">Start Date should be at least 10 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="endDate">Event End Date</label>
-                <input type="text" name="endDate" id="endDate" [(ngModel)]="eventModel.endDate">
+                <input type="text" class="form-control" name="endDate" #endDate="ngModel" id="endDate" [(ngModel)]="eventModel.endDate"
+                    required minlength="10"
+                    [class.is-invalid]="endDate.invalid && endDate.touched"
+                >
+                <div *ngIf="endDate.touched && endDate.errors">
+                    <div class="alert alert-danger" *ngIf="endDate.errors.required">End Date is required</div>
+                    <div class="alert alert-danger" *ngIf="endDate.errors.minlength">End Date should be at least 10 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="startTime">Event Start Time</label>
-                <input type="text" name="startTime" id="startTime" [(ngModel)]="eventModel.startTime">
+                <input type="text" class="form-control" name="startTime" #startTime="ngModel" id="startTime" [(ngModel)]="eventModel.startTime"
+                    required minlength="6" maxlength="7"
+                    [class.is-invalid]="startTime.invalid && startTime.touched"
+                >
+                <div *ngIf="startTime.touched && startTime.errors">
+                    <div class="alert alert-danger" *ngIf="startTime.errors.required">Start Time is required</div>
+                    <div class="alert alert-danger" *ngIf="startTime.errors.minlength">Start Time should be at least 6 characters.</div>
+                    <div class="alert alert-danger" *ngIf="startTime.errors.maxlength">Start Time should be no more than 7 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="endTime">Event End Time</label>
-                <input type="text" name="endTime" id="endTime" [(ngModel)]="eventModel.endTime">
+                <input type="text" class="form-control" name="endTime" #endTime="ngModel" id="endTime" [(ngModel)]="eventModel.endTime"
+                    required minlength="6" maxlength="7"
+                    [class.is-invalid]="endTime.invalid && endTime.touched"
+                >
+                <div *ngIf="endTime.touched && endTime.errors">
+                    <div class="alert alert-danger" *ngIf="endTime.errors.required">End Time is required</div>
+                    <div class="alert alert-danger" *ngIf="endTime.errors.minlength">End Time should be at least 6 characters.</div>
+                    <div class="alert alert-danger" *ngIf="endTime.errors.maxlength">End Time should be no more than 7 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="location">Event Location</label>
-                <input type="text" name="location" id="location" [(ngModel)]="eventModel.location">
+                <input type="text" class="form-control" name="location" #location="ngModel" id="location" [(ngModel)]="eventModel.location"
+                    required
+                    [class.is-invalid]="location.invalid && location.touched"
+                >
+                <div *ngIf="location.touched && location.errors">
+                    <div class="alert alert-danger" *ngIf="location.errors.required">Location is required</div>
+                </div>
             </div>
             <div>
                 <label for="registration">Allow Registration</label>
-                <input type="text" name="registration" id="registration" [(ngModel)]="eventModel.registration">
+                <input type="text" class="form-control" name="registration" #registration="ngModel" id="registration" [(ngModel)]="eventModel.registration"
+                    required minlength="3"
+                    [class.is-invalid]="registration.invalid && registration.touched"
+                >
+                <div *ngIf="registration.touched && registration.errors">
+                    <div class="alert alert-danger" *ngIf="registration.errors.required">Registration is required</div>
+                    <div class="alert alert-danger" *ngIf="registration.errors.minlength">Registration should be at least 3 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="eventImage">Event Image</label>
-                <input type="text" name="eventImage" id="eventImage" [(ngModel)]="eventModel.eventImage">
+                <input type="text" class="form-control" name="eventImage" #eventImage="ngModel" id="eventImage" [(ngModel)]="eventModel.eventImage"
+                    required minlength="3"
+                    [class.is-invalid]="eventImage.invalid && eventImage.touched"
+                >
+                <div *ngIf="eventImage.touched && eventImage.errors">
+                    <div class="alert alert-danger" *ngIf="eventImage.errors.required">Event Image is required</div>
+                    <div class="alert alert-danger" *ngIf="eventImage.errors.minlength">Event Image should be at least 3 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="adultPrice">Adult Ticket Price</label>
-                <input type="text" name="adultPrice" id="adultPrice" [(ngModel)]="eventModel.adultPrice">
+                $<input type="text" class="form-control" name="adultPrice" #adultPrice="ngModel" id="adultPrice" [(ngModel)]="eventModel.adultPrice"
+                    required minlength="1"
+                    [class.is-invalid]="adultPrice.invalid && adultPrice.touched"
+                >
+                <div *ngIf="adultPrice.touched && adultPrice.errors">
+                    <div class="alert alert-danger" *ngIf="adultPrice.errors.required">Adult Price is required</div>
+                    <div class="alert alert-danger" *ngIf="adultPrice.errors.minlength">Adult Price should be at least 1 characters.</div>
+                </div>
             </div>
             <div>
                 <label for="childPrice">Child Ticket Price</label>
-                <input type="text" name="childPrice" id="childPrice" [(ngModel)]="eventModel.childPrice">
+                $<input type="text" class="form-control" name="childPrice" #childPrice="ngModel" id="childPrice" [(ngModel)]="eventModel.childPrice"
+                    required minlength="1"
+                    [class.is-invalid]="childPrice.invalid && childPrice.touched"
+                >
+                <div *ngIf="childPrice.touched && childPrice.errors">
+                    <div class="alert alert-danger" *ngIf="childPrice.errors.required">Child Price is required</div>
+                    <div class="alert alert-danger" *ngIf="childPrice.errors.minlength">Child Price should be at least 1 characters.</div>
+                </div>
             </div>
             <div>
-                <button type="submit" (click)="save()">Save</button>
+                <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
             </div>
             <div>
-                <button type="button" (click)="close()">Cancel</button>
+                <button class="close btn btn-secondary" type="button" (click)="close()">Cancel</button>
             </div>
         </div>
     </form>

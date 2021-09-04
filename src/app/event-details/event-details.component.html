@@ -1,67 +1,69 @@
 <div class="container-fluid">
+    <div>
+        <button type="button" class="close btn btn-secondary" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <div class="col">
         <div class="row">
-            <h4>Event Details</h4>
-            <button type="button" class="close" aria-label="Close" (click)="close()">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <h2>Event Details</h2>
         </div>
     </div>
     <form #eventDetailsForm="ngForm" >
         <div class="row">
             <div>
                 <label for="eventName">Event Name</label>
-                <input type="text" name="eventName" id="eventName" [(ngModel)]="event.eventName">
+                <input type="text" class="form-control" name="eventName" id="eventName" [(ngModel)]="event.eventName">
             </div>
             <div>
                 <label for="eventDescription">Event Description</label>
-                <input type="text" name="eventDescription" id="eventDescription" [(ngModel)]="event.eventDescription">
+                <input type="text" class="form-control" name="eventDescription" id="eventDescription" [(ngModel)]="event.eventDescription">
             </div>
             <div>
                 <label for="category">Event Category</label>
-                <input type="text" name="category" id="category" [(ngModel)]="event.category">
+                <input type="text" class="form-control" name="category" id="category" [(ngModel)]="event.category">
             </div>
             <div>
                 <label for="startDate">Event Start Date</label>
-                <input type="text" name="startDate" id="startDate" [(ngModel)]="event.startDate">
+                <input type="text" class="form-control" name="startDate" id="startDate" [(ngModel)]="event.startDate">
             </div>
             <div>
                 <label for="endDate">Event End Date</label>
-                <input type="text" name="endDate" id="endDate" [(ngModel)]="event.endDate">
+                <input type="text" class="form-control" name="endDate" id="endDate" [(ngModel)]="event.endDate">
             </div>
             <div>
                 <label for="startTime">Event Start Time</label>
-                <input type="text" name="startTime" id="startTime" [(ngModel)]="event.startTime">
+                <input type="text" class="form-control" name="startTime" id="startTime" [(ngModel)]="event.startTime">
             </div>
             <div>
                 <label for="endTime">Event End Time</label>
-                <input type="text" name="endTime" id="endTime" [(ngModel)]="event.endTime">
+                <input type="text" class="form-control" name="endTime" id="endTime" [(ngModel)]="event.endTime">
             </div>
             <div>
                 <label for="location">Event Location</label>
-                <input type="text" name="location" id="location" [(ngModel)]="event.location">
+                <input type="text" class="form-control" name="location" id="location" [(ngModel)]="event.location">
             </div>
             <div>
                 <label for="registration">Allow Registration</label>
-                <input type="text" name="registration" id="registration" [(ngModel)]="event.registration">
+                <input type="text" class="form-control" name="registration" id="registration" [(ngModel)]="event.registration">
             </div>
             <div>
                 <label for="eventImage">Event Image</label>
-                <input type="text" name="eventImage" id="eventImage" [(ngModel)]="event.eventImage">
+                <input type="text" class="form-control" name="eventImage" id="eventImage" [(ngModel)]="event.eventImage">
             </div>
             <div>
                 <label for="adultPrice">Adult Ticket Price</label>
-                <input type="text" name="adultPrice" id="adultPrice" [(ngModel)]="event.adultPrice">
+                $<input type="text" class="form-control" name="adultPrice" id="adultPrice" [(ngModel)]="event.adultPrice">
             </div>
             <div>
                 <label for="childPrice">Child Ticket Price</label>
-                <input type="text" name="childPrice" id="childPrice" [(ngModel)]="event.childPrice">
+                $<input type="text" class="form-control" name="childPrice" id="childPrice" [(ngModel)]="event.childPrice">
             </div>
             <div>
-                <button type="submit" (click)="save()">Save</button>
+                <button class="btn btn-primary save" type="submit" (click)="save()">Save</button>
             </div>
             <div>
-                <button type="button" (click)="close()">Cancel</button>
+                <button class="btn btn-secondary close" type="button" (click)="close()">Cancel</button>
             </div>
         </div>
     </form>

@@ -1,0 +1,15 @@
+label {
+    padding-right: 2rem;
+}
+
+.form-control {
+    width:20%;
+}
+
+.close {
+    float: right;
+}
+
+.save {
+    margin-top: 2rem;
+}

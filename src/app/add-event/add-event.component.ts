@@ -48,4 +48,8 @@ export class AddEventComponent implements OnInit {
     this.router.navigate(['eventmanagement']);
   }
 
+  onSubmit(eventForm: any) {
+    
+  }
+
 }

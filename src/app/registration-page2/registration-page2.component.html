@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <div>
-        Child Price: {{totalChildPrice}}
+        Child Price: {{totalChildPrice | currency}}
     </div>
     <div>
-        Adult Price: {{totalAdultPrice}}
+        Adult Price: {{totalAdultPrice | currency}}
     </div>
     <div>
         <button type="submit" class="btn btn-primary" (click)="confirm()">Confirm</button>
