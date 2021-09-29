@@ -12,6 +12,7 @@ export class EventregistrationdetailsComponent implements OnInit {
   eventId: any;
   event: any;
   errorMsg: any;
+  registration: boolean = true;
 
   constructor(private eventService: EventService, private route: ActivatedRoute, private router: Router) { }
 
@@ -30,6 +31,7 @@ export class EventregistrationdetailsComponent implements OnInit {
             this.event = data;
             console.log("Event from event registration: ");
             console.log(this.event);
+            this.registration = !!this.event.registration;
           },
           (error) => this.errorMsg = error
         )

@@ -13,3 +13,9 @@ label {
 .save {
     margin-top: 2rem;
 }
+
+.image-row {
+    width: 20%;
+    height: 20%;
+    float: right;
+}

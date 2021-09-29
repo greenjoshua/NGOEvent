@@ -9,7 +9,16 @@
             <h2>Event Details</h2>
         </div>
     </div>
-    <form #eventDetailsForm="ngForm" >
+    <form #eventDetailsForm="ngForm" *ngIf="event != undefined">
+        <div class="row image-row">
+            <!--<label for="eventImage">Event Image</label>
+            <span>Choose file</span>
+            <input type="file" class="form-control" name="eventImage" #eventImage="ngModel" id="eventImage" [(ngModel)]="event.eventImage">-->
+            <img src={{event.eventImage}} alt="an image depiction of the event" />
+            <label for="eventImage">Event Image</label>
+            <span>Choose file</span>
+            <input type="file" class="form-control" name="eventImage" id="eventImage">
+        </div>
         <div class="row">
             <div>
                 <label for="eventName">Event Name</label>
@@ -25,39 +34,43 @@
             </div>
             <div>
                 <label for="startDate">Event Start Date</label>
-                <input type="text" class="form-control" name="startDate" id="startDate" [(ngModel)]="event.startDate">
+                <input type="date" class="form-control" name="startDate" id="startDate" [(ngModel)]="event.startDate">
             </div>
             <div>
                 <label for="endDate">Event End Date</label>
-                <input type="text" class="form-control" name="endDate" id="endDate" [(ngModel)]="event.endDate">
+                <input type="date" class="form-control" name="endDate" id="endDate" [(ngModel)]="event.endDate">
             </div>
             <div>
                 <label for="startTime">Event Start Time</label>
-                <input type="text" class="form-control" name="startTime" id="startTime" [(ngModel)]="event.startTime">
+                <input type="time" class="form-control" name="startTime" id="startTime" [(ngModel)]="event.startTime">
             </div>
             <div>
                 <label for="endTime">Event End Time</label>
-                <input type="text" class="form-control" name="endTime" id="endTime" [(ngModel)]="event.endTime">
+                <input type="time" class="form-control" name="endTime" id="endTime" [(ngModel)]="event.endTime">
             </div>
             <div>
                 <label for="location">Event Location</label>
                 <input type="text" class="form-control" name="location" id="location" [(ngModel)]="event.location">
             </div>
             <div>
-                <label for="registration">Allow Registration</label>
-                <input type="text" class="form-control" name="registration" id="registration" [(ngModel)]="event.registration">
+                <label>Allow Registration</label><br>
+                <label for="isChecked"><input type="checkbox" name="isChecked" id="isChecked" [(ngModel)]="isChecked"
+                    [checked]="event.registration == 'true'"
+                >
+                Yes </label>
             </div>
-            <div>
+            <!--<div>
                 <label for="eventImage">Event Image</label>
                 <input type="text" class="form-control" name="eventImage" id="eventImage" [(ngModel)]="event.eventImage">
-            </div>
+            </div>-->
+            
             <div>
                 <label for="adultPrice">Adult Ticket Price</label>
-                $<input type="text" class="form-control" name="adultPrice" id="adultPrice" [(ngModel)]="event.adultPrice">
+                <input type="text" class="form-control" name="adultPrice" id="adultPrice" [(ngModel)]="event.adultPrice">
             </div>
             <div>
                 <label for="childPrice">Child Ticket Price</label>
-                $<input type="text" class="form-control" name="childPrice" id="childPrice" [(ngModel)]="event.childPrice">
+                <input type="text" class="form-control" name="childPrice" id="childPrice" [(ngModel)]="event.childPrice">
             </div>
             <div>
                 <button class="btn btn-primary save" type="submit" (click)="save()">Save</button>

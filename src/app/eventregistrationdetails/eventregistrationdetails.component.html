@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div *ngIf="event != undefined" class="container-fluid">
     <div class="row pageheader">
         <h1>Event Registration Details: {{event.eventName}}</h1>
     </div>
@@ -33,7 +33,7 @@
             </mat-card>
         </div>
     </div>
-    <div class="row">
+    <div *ngIf="event.registration == 'true'" class="row">
         <button type="submit" (click)="onClickRegistration(event)">Registration button (only if registration is allowed)</button>
     </div>
 </div>
