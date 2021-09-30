@@ -14,10 +14,10 @@
                 {{event.location}}
             </span>
             <span>
-                {{event.startDate}} {{event.startTime}}
+                {{event.startDate | date}} {{'01/01/1900' + ' ' + event.startTime | date: 'hh:mm aa'}}
             </span>
             <span>
-                {{event.endDate}} {{event.endTime}}
+                {{event.endDate | date}} {{'01/01/1900' + ' ' + event.endTime | date: 'hh:mm aa'}}
             </span>
         </div>
         <div class="col-12 col-md-6 col-lg-4">

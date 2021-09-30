@@ -23,8 +23,8 @@
                         <td>{{evt.eventName}}</td>
                         <td>{{evt.category}}</td>
                         <td>{{evt.location}}</td>
-                        <td>{{evt.startDate}}</td>
-                        <td>{{evt.endDate}}</td>
+                        <td>{{evt.startDate | date}}</td>
+                        <td>{{evt.endDate | date}}</td>
                         <td>
                             <button mat-button (click)="openEditDialog(evt)">edit</button>
                         </td>
