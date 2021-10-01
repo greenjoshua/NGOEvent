@@ -55,17 +55,19 @@ export class EventDetailsComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  /*save() {
-    this.eventService.getEvents().subscribe(
-      (data) => {
-        console.log("....Updating Event");
-        console.log(this.event);
-        this.eventService.updateEvent(this.event.id, this.event);
-      },
-      (error) => this.errorMsg = error
-    );
+  delete() {
+    if(this.event != undefined) {
+      let id = this.event.id;
+      this.eventService.delete(id).subscribe(
+        (data) => {
+          console.log(data);
+        },
+        (error) => this.errorMsg = error
+      )
+    }
+
     this.dialogRef.close();
-  }*/
+  }
 
   save() {
     console.log(this.event);

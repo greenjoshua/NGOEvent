@@ -65,15 +65,9 @@ export class AddEventComponent implements OnInit, ControlValueAccessor {
       },
       (error) => this.errorMsg = error
     );
-    // this.eventService.post(this.eventModel, this.file).subscribe(
-    //   (data) => {
-    //     console.log("Data from save() method in add component");
-    //     console.log(data);
-    //     this.event = data;
-    //   },
-    //   (error) => this.errorMsg = error
-    // );
+    
     this.router.navigate(['eventmanagement']);
+    
   }
 
   close() {
